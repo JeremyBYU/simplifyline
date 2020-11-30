@@ -1,0 +1,12 @@
+# Misc
+include README.md
+include LICENSE
+include requirements.txt
+
+# Compiled module
+include simplifyline/simplifyline*.pyd
+include simplifyline/simplifyline*.so
+include simplifyline_pybind*.so
+
+# Exclude
+global-exclude *.py[co]
