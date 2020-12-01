@@ -1,7 +1,7 @@
-# License - MIT - Open3D
+# License - MIT - Open3D, Jeremy Castagno
 # Option 1: Do not define "PYTHON_EXECUTABLE", but run `cmake ..` within your
 #           virtual environment. CMake will pick up the python executable in the
-#           virtual environment.
+#           virtual environment. Note from JC - Sometimes this doesnt work and you must use Option 2!
 # Option 2: You can also define `cmake -DPYTHON_EXECUTABLE` to specify a python
 #           executable.
 set(PYBIND_PACKAGE_FOLDER "${PYPI_PACKAGE_NAME}_pybind")
