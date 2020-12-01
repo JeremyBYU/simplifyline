@@ -7,6 +7,6 @@ int main(int argc, char const *argv[])
     std::cout << "My Name is " << my_name << std::endl;
     
     // Respond
-    std::cout << SimplifyLine::Hello(my_name) << std::endl;
+    // std::cout << SimplifyLine::Hello(my_name) << std::endl;
 
 }

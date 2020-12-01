@@ -3,6 +3,7 @@
 #include "SimplifyLine/SimplifyLine.hpp"
 #include <chrono>
 #include <vector>
+#include "npy/npy.hpp"
 
 using namespace std::literals::chrono_literals;
 
@@ -66,4 +67,45 @@ TEST_CASE("bench_simplify_2d_template")
             ankerl::nanobench::doNotOptimizeAway(results);
         });
     }
+}
+
+
+TEST_CASE("Examples")
+{
+    ankerl::nanobench::Bench bench;
+    bench.title("Examples").timeUnit(1us, "us").warmup(10).minEpochIterations(100);
+
+    std::vector<unsigned long> shape;
+    bool fortran_order;
+    std::vector<double> data;
+    npy::LoadArrayFromNumpy("fixtures/points/example_1.npy", shape, fortran_order, data);
+    SimplifyLine::Matrix<double> points(std::move(data), data.size() / 2.0, 2);
+    
+    // std::cout << "Points Before: " << points.rows << std::endl; 
+
+
+    bench.run("Example 1 RadialDist", [&]() {
+        auto results = SimplifyLine::SimplifyRadialDist<double, 2>(points, 0.8);
+        // std::cout << "Points After: " << results.rows << std::endl; 
+        ankerl::nanobench::doNotOptimizeAway(results);
+    });
+
+    bench.run("Example 1 SimplifyLine, HQ=False", [&]() {
+        auto results = SimplifyLine::SimplifyLine<double>(points, 0.1, false);
+        // std::cout << "Points After: " << results.rows << std::endl; 
+        ankerl::nanobench::doNotOptimizeAway(results);
+    });
+
+    bench.run("Example 1 SimplifyLine, HQ=True", [&]() {
+        auto results = SimplifyLine::SimplifyLine<double>(points, 0.1, true);
+        // std::cout << "Points After: " << results.rows << std::endl; 
+        ankerl::nanobench::doNotOptimizeAway(results);
+    });
+
+    // bench.run("Example 1 SimplifyLineIteration, HQ=True", [&]() {
+    //     auto results = SimplifyLine::SimplifyLineIteration<double>(points, 0.1, true);
+    //     // std::cout << "Points After: " << results.rows << std::endl; 
+    //     ankerl::nanobench::doNotOptimizeAway(results);
+    // });
+
 }

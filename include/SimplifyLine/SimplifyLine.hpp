@@ -36,27 +36,6 @@ namespace SimplifyLine {
 std::string GetSimplifyLineVersion();
 
 /**
- * \brief Says hello with a name
- * 
- * \param name 
- * \return std::string 
- */
-std::string Hello(std::string& name);
-
-/**
- * \brief Multiplies a generic array by a scalar
- * 
- * \tparam T 
- * \param vec 
- * \param scalar 
- * \return std::vector<T> 
- */
-template <typename T>
-std::vector<T> MultiplyByScalar(std::vector<T>& vec, T scalar);
-
-
-
-/**
  * \brief Will perform Douglas Peucker Simplication on the line
  * 
  * \tparam T 
@@ -80,6 +59,10 @@ Matrix<T> DouglasPeucker2D(const Matrix<T> &points, double max_distance);
  */
 template <typename T> 
 Matrix<T> SimplifyLine(const Matrix<T> &points, double max_distance, bool high_quality=true);
+
+
+// template <typename T> 
+// Matrix<T> SimplifyLineIteration(const Matrix<T> &points, double max_distance, bool high_quality=true);
 
 
 /**

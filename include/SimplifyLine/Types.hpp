@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <iterator>
 #include <iostream>
+#include <array>
 
 namespace SimplifyLine {
 
