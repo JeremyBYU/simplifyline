@@ -39,19 +39,20 @@ std::string GetSimplifyLineVersion();
  * \brief Will perform Douglas Peucker Simplication on the line
  * 
  * \tparam T 
+ * \tparam dim The dimesion of the line, 2D or 3D  
  * \param points Matrix of 2D or 3D points
  * \param max_distance Maximum distance of point on line
  * \return Matrix<T> The simplified line
  */
 template <typename T, int dim> 
-Matrix<T> DouglasPeucker(const Matrix<T> &points, double max_distance);
+Matrix<T> DouglasPeucker(const Matrix<T> &points, T max_distance);
 
 
 /**
  * \brief Will simplify a 2D or 3D line
  * 
  * \tparam T 
- * \tparam dim Whether 2D or 3D 
+ * \tparam dim The dimesion of the line, 2D or 3D  
  * \param points Matrix of 2D or 3D points
  * \param max_distance Maximum distance of point on line
  * \param high_quality Create high quality simplification, quality comes with increased computation time.
@@ -59,26 +60,20 @@ Matrix<T> DouglasPeucker(const Matrix<T> &points, double max_distance);
  * \return Matrix<T> The simplified line
  */
 template <typename T, int dim=2> 
-Matrix<T> SimplifyLine(const Matrix<T> &points, double max_distance, bool high_quality=true);
-
-
-// template <typename T> 
-// Matrix<T> SimplifyLineIteration(const Matrix<T> &points, double max_distance, bool high_quality=true);
+Matrix<T> SimplifyLine(const Matrix<T> &points, T max_distance, bool high_quality=true);
 
 
 /**
  * \brief Will perform simple radial distance simplification on a line
  * 
  * \tparam T 
+ * \tparam dim The dimesion of the line, 2D or 3D  
  * \param points Matrix of 2D or 3D points
  * \param max_distance Maximum distance of point on line
  * \return Matrix<T> The simplified line
  */
-template <typename T> 
-Matrix<T> SimplifyRadialDist2D(const Matrix<T> &points, double max_distance);
-
 template <typename T, int dim>
-Matrix<T> SimplifyRadialDist(const Matrix<T>& points, double max_distance);
+Matrix<T> SimplifyRadialDist(const Matrix<T>& points, T max_distance);
 
 
 } // namespace SimplifyLine

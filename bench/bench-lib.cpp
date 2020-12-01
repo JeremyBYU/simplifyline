@@ -32,23 +32,23 @@ void bench_(ankerl::nanobench::Bench* bench, std::string name, size_t num_points
     auto points = generate_line_points(num_points);
 }
 
-TEST_CASE("bench_simplify_2d")
-{
-    ankerl::nanobench::Bench bench;
-    bench.title("Simplify 2D").timeUnit(1us, "us").warmup(10).minEpochIterations(2000);
+// TEST_CASE("bench_simplify_2d")
+// {
+//     ankerl::nanobench::Bench bench;
+//     bench.title("Simplify 2D").timeUnit(1us, "us").warmup(10).minEpochIterations(2000);
 
-    // Running the benchmark multiple times, with different number of elements
-    for (auto num_points : {10U, 100U, 1000U, 10000U, 100000U})
-    {
-        auto points = generate_line_points(num_points);
-        std::string name = std::to_string(num_points);
-        bench.run(name, [&]() {
-            auto results = SimplifyLine::SimplifyRadialDist2D<double>(points, 1.0);
-            // std::cout << results.rows << std::endl;
-            ankerl::nanobench::doNotOptimizeAway(results);
-        });
-    }
-}
+//     // Running the benchmark multiple times, with different number of elements
+//     for (auto num_points : {10U, 100U, 1000U, 10000U, 100000U})
+//     {
+//         auto points = generate_line_points(num_points);
+//         std::string name = std::to_string(num_points);
+//         bench.run(name, [&]() {
+//             auto results = SimplifyLine::SimplifyRadialDist2D<double>(points, 1.0);
+//             // std::cout << results.rows << std::endl;
+//             ankerl::nanobench::doNotOptimizeAway(results);
+//         });
+//     }
+// }
 
 
 TEST_CASE("bench_simplify_2d_template")

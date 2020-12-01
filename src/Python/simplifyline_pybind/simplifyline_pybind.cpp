@@ -27,12 +27,4 @@ PYBIND11_MODULE(simplifyline_pybind, m)
                                   {"high_quality", "Preserve high quality"}});
 
     m.def("get_simplifyline_version", &SimplifyLine::GetSimplifyLineVersion, "Get SimplifyLine Version");
-    // Heres an example to overload, but the documentation is wonky
-    // m.def("multiply_by_scalar", &SimplifyLine::MultiplyByScalar<double>, "vec"_a, "scalar"_a, "Multiplies a vector");
-    // m.def("multiply_by_scalar", &SimplifyLine::MultiplyByScalar<int>, "vec"_a, "scalar"_a, "Multiplies a vector");
-    // m.def("multiply_by_scalar", &SimplifyLine::MultiplyByScalar<size_t>, "vec"_a, "scalar"_a, "Multiplies a vector");
-    // docstring::FunctionDocInject(
-    //     m, "multiply_by_scalar",
-    //     {{"vec", "A list of numbers (double, int, size_t)"}, {"scalar", "A scalar number to multiply the list
-    //     by."}});
 }

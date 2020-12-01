@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introducing SimplifyLine &mdash; SimplifyLine 0.0.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/collapsible-lists\js\CollapsibleLists.compressed.js"></script>
+        <script src="_static/collapsible-lists\js\apply-collapsible-lists.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Building Documentation" href="builddocs.html" />
+    <link rel="prev" title="SimplifyLine: A Great SimplifyLine" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SimplifyLine
+          
+
+          
+            
+            <img src="_static/logo_1.gif" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introducing SimplifyLine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#simplify-2d-and-3d-lines">Simplify 2D and 3D Lines</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#key-features">Key Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-with-python-and-use">Install with Python and Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-project-manually">Build Project Manually</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build-manually-with-python">Build Manually with Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-manually-with-cmake">Build Manually With CMake</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="builddocs.html">Building Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/Python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/C++/index.html">C++</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python_api/simplifyline.html">simplifyline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_api/simplifyline.helper.html">simplifyline.helper</a></li>
+</ul>
+<p class="caption"><span class="caption-text">C++ API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cpp_api/cpp_library_root.html">C++ Library API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SimplifyLine</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Introducing SimplifyLine</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="introducing-simplifyline">
+<span id="introduction"></span><h1>Introducing SimplifyLine<a class="headerlink" href="#introducing-simplifyline" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="simplify-2d-and-3d-lines">
+<h2>Simplify 2D and 3D Lines<a class="headerlink" href="#simplify-2d-and-3d-lines" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://pypi.org/project/simplifyline/"><img alt="PyPI" src="https://img.shields.io/pypi/v/simplifyline.svg" /></a>
+<a class="reference external image-reference" href="https://github.com/JeremyBYU/simplifyline/workflows/Run%20Tests/badge.svg"><img alt="Run Tests" src="https://github.com/JeremyBYU/simplifyline/workflows/Run%20Tests/badge.svg" /></a>
+<a class="reference external image-reference" href="https://jeremybyu.github.io/simplifyline/"><img alt="Docs" src="https://img.shields.io/badge/API-docs-blue" /></a>
+<a class="reference external image-reference" href="https://github.com/JeremyBYU/simplifyline/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/pypi/l/simplifyline.svg" /></a>
+<p>A high performance 2D and 3D line simplification algorithm. Uses <a class="reference external" href="https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm">Ramer-Douglas-Peucker Line Simplification</a>.</p>
+<div class="section" id="key-features">
+<h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Simplify 2D and 3D lines</p></li>
+<li><p>Written in C++ with python bindings. Can be used standalone in a C++ project with CMake as well.</p></li>
+<li><p>Based on high-performance <a class="reference external" href="https://mourner.github.io/simplify-js/">Simplify.js</a></p></li>
+</ul>
+</div>
+<div class="section" id="install-with-python-and-use">
+<h3>Install with Python and Use<a class="headerlink" href="#install-with-python-and-use" title="Permalink to this headline">¶</a></h3>
+<p>The python library can be installed as so:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">simplifyline</span></code></p></li>
+</ol>
+<p>Example Use:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">simplifyline</span> <span class="kn">import</span> <span class="n">simplify_line_2d</span><span class="p">,</span> <span class="n">MatrixDouble</span>
+<span class="n">mat2D</span> <span class="o">=</span> <span class="n">MatrixDouble</span><span class="p">([[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]])</span>
+<span class="n">results_mat2D</span> <span class="o">=</span> <span class="n">simplify_line_2d</span><span class="p">(</span><span class="n">mat2D</span><span class="p">,</span> <span class="n">max_distance</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">high_quality</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">results_mat2D</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_array_equal</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]]))</span>
+</pre></div>
+</div>
+<p>See <a class="reference external" href="https://jeremybyu.github.io/simpliflyline/">documentation</a> for more details.</p>
+</div>
+<div class="section" id="build-project-manually">
+<h3>Build Project Manually<a class="headerlink" href="#build-project-manually" title="Permalink to this headline">¶</a></h3>
+<p>You can build the project manually in two ways: using python <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>, or in pure CMake</p>
+<div class="section" id="build-manually-with-python">
+<h4>Build Manually with Python<a class="headerlink" href="#build-manually-with-python" title="Permalink to this headline">¶</a></h4>
+<p>The root directory <a class="reference external" href="setup.py">setup.py</a> file has been modified to build with CMake. This is meant for python users that need to build manually (for some reason) but are not actively developing or changing the code.</p>
+<ol class="arabic simple">
+<li><p>Install <a class="reference external" href="https://conda.io/projects/conda/en/latest/">conda</a> or create a python virtual environment (<a class="reference external" href="https://medium.freecodecamp.org/why-you-need-python-environments-and-how-to-manage-them-with-conda-85f155f4353c">Why?</a>). I recommend conda for Windows users.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.</span></code> - Call from root directory</p></li>
+</ol>
+</div>
+<div class="section" id="build-manually-with-cmake">
+<h4>Build Manually With CMake<a class="headerlink" href="#build-manually-with-cmake" title="Permalink to this headline">¶</a></h4>
+<p>Building happens entirely with CMake. This is meant really only for the library developers who are working on C++ and Python in an edit-compile cycle.</p>
+<div class="section" id="c-library">
+<h5>C++ Library<a class="headerlink" href="#c-library" title="Permalink to this headline">¶</a></h5>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">cmake-build</span> <span class="pre">&amp;&amp;</span> <span class="pre">cd</span> <span class="pre">cmake-build</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">..</span></code> -  Note - For windows also add <code class="docutils literal notranslate"><span class="pre">-DCMAKE_GENERATOR_PLATFORM=x64</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--build</span> <span class="pre">.</span> <span class="pre">-j$(nproc)</span> <span class="pre">--config</span> <span class="pre">Release</span></code></p></li>
+</ol>
+<p>Build options:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>SPL_BUILD_BENCHMARKS:BOOL=ON // SPL - Build Benchmarks
+SPL_BUILD_EXAMPLES:BOOL=ON // SPL - Build Examples
+SPL_BUILD_PYMODULE:BOOL=ON // SPL -Build Python Module
+SPL_BUILD_TESTS:BOOL=ON // SPL - Build Tests
+SPL_BUILD_WERROR:BOOL=OFF // SPL - Add Werror flag to build (turns warnings into errors)
+SPL_WITH_OPENMP:BOOL=ON // SPL - Build with OpenMP Support
+</pre></div>
+</div>
+</div>
+<div class="section" id="python-extension">
+<h5>Python Extension<a class="headerlink" href="#python-extension" title="Permalink to this headline">¶</a></h5>
+<p>This is meant for advanced python users who are actively developing the extension.</p>
+<ol class="arabic simple">
+<li><p>Install <a class="reference external" href="https://conda.io/projects/conda/en/latest/">conda</a> or create a python virtual environment (<a class="reference external" href="https://medium.freecodecamp.org/why-you-need-python-environments-and-how-to-manage-them-with-conda-85f155f4353c">Why?</a>). I recommend conda for Windows users.</p></li>
+<li><p>Perform <code class="docutils literal notranslate"><span class="pre">CMake</span></code> build as described above</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">cmake-build</span> <span class="pre">&amp;&amp;</span> <span class="pre">cmake</span> <span class="pre">--build</span> <span class="pre">.</span> <span class="pre">--target</span> <span class="pre">python-package</span> <span class="pre">--config</span> <span class="pre">Release</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">lib/python_package</span> <span class="pre">&amp;&amp;</span>&#160; <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> . This installs the library in develop/edit mode. To update the python extension in your python virtual environment all you need to do is run step 3 again.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="builddocs.html" class="btn btn-neutral float-right" title="Building Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="SimplifyLine: A Great SimplifyLine" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Jeremy Castagno
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -35,6 +35,7 @@ def make_sine_wave(num_points=100, cycles=5):
 
 
 def perfrom_test(points, tolerance=0.1, high_quality=True):
+    rprint("")
     rprint("Raw points: {}".format(points.shape))
     points_mat = MatrixDouble(points)
 
@@ -50,6 +51,11 @@ def perfrom_test(points, tolerance=0.1, high_quality=True):
     ax[0].scatter(points[:, 0], points[:, 1], c='r', s=0.1)
     ax[1].plot(points_simple[:, 0], points_simple[:, 1], c='b')
     ax[1].scatter(points_simple[:, 0], points_simple[:, 1], c='r')
+
+
+    ax[0].set_title("Raw Points")
+    ax[1].set_title("Simplified Points")
+    fig.tight_layout()
     plt.show()
 
 def main():
@@ -57,10 +63,8 @@ def main():
     points = example_points
     perfrom_test(points)
 
-
     points = make_saw_wave()
     perfrom_test(points)
-
 
     points = make_sine_wave()
     # points = np.concatenate([points, points], axis=1)
