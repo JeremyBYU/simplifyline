@@ -149,7 +149,7 @@ class Matrix
      * @param j
      * @return const T&
      */
-    const T& operator()(size_t i, size_t j) const
+    T& operator()(size_t i, size_t j) const
     {
         // assert(i >= 0 && i < rows);
         // assert(j >= 0 && j < cols);
@@ -161,7 +161,7 @@ class Matrix
      * @param index
      * @return const T&
      */
-    const T& operator()(size_t index) const
+    T& operator()(size_t index) const
     {
         // assert(i >= 0 && i < rows);
         // assert(j >= 0 && j < cols);

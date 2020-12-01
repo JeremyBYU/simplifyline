@@ -99,18 +99,107 @@ Matrix<T> SimplifyRadialDist2D(const Matrix<T>& points, double max_distance)
 template <typename T>
 Matrix<T> SimplifyLine(const Matrix<T>& points, double max_distance, bool high_quality)
 {
-    auto new_points = SimplifyRadialDist<double, 2>(points, max_distance);
+    if (high_quality)
+    {
+        return DouglasPeucker2D(points, max_distance);
+    }
+    else
+    {
+        auto new_points = SimplifyRadialDist<double, 2>(points, max_distance);
+        auto simplified_points = DouglasPeucker2D(new_points, max_distance);
+        return simplified_points;
+    }
+    
 
 
-    return new_points;
 }
 
+template <typename T> 
+void RecursiveDP2D(const Matrix<T> &points, std::vector<bool> &valid, size_t start, size_t end, T max_distance)
+{
+    size_t segment_length = end - start;
+    if (segment_length <= 1)
+    {
+        return;
+    }
+
+    T const seg_vec_x = points(end, 0) - points(start, 0);
+    T const seg_vec_y = points(end, 1) - points(start, 1);
+    T const seg_dot_seg = seg_vec_x * seg_vec_x + seg_vec_y * seg_vec_y;
+
+    size_t point = start + 1;
+    T max_point_dist = -1.0;
+    std::size_t max_dist_index = start + 1; 
+    for(; point < end; ++point)
+    {
+        auto const point_vec_x = points(point, 0) - points(start, 0);
+        auto const point_vec_y = points(point, 1) - points(start, 1);
+        auto const point_dot_seg = point_vec_x * seg_vec_x + point_vec_y * seg_vec_y; 
+        double dist = 0.0;
+        if (point_dot_seg <= 0.0)
+        {
+            dist = point_vec_x * point_vec_x + point_vec_y * point_vec_y;
+        }
+        else if (seg_dot_seg <= point_dot_seg)
+        {
+            auto const dx = points(point, 0) - points(end, 0);
+            auto const dy = points(point, 1) - points(end, 1);
+            dist = dx * dx + dy * dy;
+        }
+        else
+        {
+            auto const b = point_dot_seg / seg_dot_seg;
+            auto const dx = point_vec_x - b * seg_vec_x;
+            auto const dy = point_vec_y - b * seg_vec_y;
+            dist = dx * dx + dy * dy;
+        }
+
+        if(max_point_dist < dist)
+        {
+            max_point_dist = dist;
+            max_dist_index = point;            
+        }
+    }
+
+    if (max_distance < max_point_dist)
+    {
+        // std::cout << "max_dist_index: " << max_dist_index << "; max_point_dist: " << max_point_dist << "; max_distance: " << max_distance << std::endl; 
+        valid[max_dist_index] = true;
+        RecursiveDP2D(points, valid, start, max_dist_index, max_distance);
+        RecursiveDP2D(points, valid, max_dist_index, end, max_distance);
+    }
+
+    return;
+}
 
 template <typename T> 
 Matrix<T> DouglasPeucker2D(const Matrix<T> &points, double max_distance)
 {
-    std::vector<bool> valid(points.rows);
-    
+    const size_t rows = points.rows;
+    const size_t cols = points.cols;
+    std::vector<bool> valid(rows, false);
+    valid[0] = true;
+    valid[rows-1] = true;
+    const T square_distance = max_distance * max_distance;
+
+    // Recursively identify all valid points
+    RecursiveDP2D(points, valid, 0, rows - 1, square_distance);
+
+    // Fill in array
+    const size_t new_rows = static_cast<size_t>(std::count(valid.begin(), valid.end(), true));
+    Matrix<T> simplified_points(new_rows, points.cols);
+    size_t simplified_index = 0;
+    for(size_t i = 0; i < rows; ++i)
+    {
+        if(valid[i])
+        {
+            simplified_points(simplified_index, 0) = points(i, 0);
+            simplified_points(simplified_index, 1) = points(i, 1);
+            simplified_index++;
+        }
+    }
+
+    return simplified_points;
 
 }
 
