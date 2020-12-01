@@ -43,21 +43,22 @@ std::string GetSimplifyLineVersion();
  * \param max_distance Maximum distance of point on line
  * \return Matrix<T> The simplified line
  */
-template <typename T> 
-Matrix<T> DouglasPeucker2D(const Matrix<T> &points, double max_distance);
+template <typename T, int dim> 
+Matrix<T> DouglasPeucker(const Matrix<T> &points, double max_distance);
 
 
 /**
  * \brief Will simplify a 2D or 3D line
  * 
  * \tparam T 
+ * \tparam dim Whether 2D or 3D 
  * \param points Matrix of 2D or 3D points
  * \param max_distance Maximum distance of point on line
  * \param high_quality Create high quality simplification, quality comes with increased computation time.
  * 
  * \return Matrix<T> The simplified line
  */
-template <typename T> 
+template <typename T, int dim=2> 
 Matrix<T> SimplifyLine(const Matrix<T> &points, double max_distance, bool high_quality=true);
 
 

@@ -91,13 +91,13 @@ TEST_CASE("Examples")
     });
 
     bench.run("Example 1 SimplifyLine, HQ=False", [&]() {
-        auto results = SimplifyLine::SimplifyLine<double>(points, 0.1, false);
+        auto results = SimplifyLine::SimplifyLine<double, 2>(points, 0.1, false);
         // std::cout << "Points After: " << results.rows << std::endl; 
         ankerl::nanobench::doNotOptimizeAway(results);
     });
 
     bench.run("Example 1 SimplifyLine, HQ=True", [&]() {
-        auto results = SimplifyLine::SimplifyLine<double>(points, 0.1, true);
+        auto results = SimplifyLine::SimplifyLine<double, 2>(points, 0.1, true);
         // std::cout << "Points After: " << results.rows << std::endl; 
         ankerl::nanobench::doNotOptimizeAway(results);
     });

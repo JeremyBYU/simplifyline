@@ -6,7 +6,7 @@ import time
 install()
 
 import simplifyline
-from simplifyline import simplify_line, MatrixDouble
+from simplifyline import simplify_line_2d, MatrixDouble
 
 example_points = np.load('fixtures/points/example_1.npy')
 rprint(example_points.shape)
@@ -39,7 +39,7 @@ def perfrom_test(points, tolerance=0.1, high_quality=True):
     points_mat = MatrixDouble(points)
 
     t0 = time.perf_counter()
-    simple_mat = simplify_line(points_mat, tolerance, high_quality)
+    simple_mat = simplify_line_2d(points_mat, tolerance, high_quality)
     t1 = time.perf_counter()
     rprint(f"It took {(t1-t0) * 1000:.3f} milliseconds")
     
@@ -63,6 +63,7 @@ def main():
 
 
     points = make_sine_wave()
+    # points = np.concatenate([points, points], axis=1)
     perfrom_test(points)
 
 
