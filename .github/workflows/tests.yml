@@ -37,6 +37,12 @@ jobs:
           python -m pip install --upgrade pip setuptools wheel
           pip install -r test-requirements.txt
 
+      - name: Install optional python testing dependencies
+        if: ${{ matrix.python-version == '3.6' || matrix.python-version == '3.7' || matrix.python-version == '3.8' }}
+        run: |
+          python -m pip install simplification
+          pip list
+
       - name: Build sdist
         run: |
           python setup.py sdist -d wheelhouse
@@ -52,4 +58,4 @@ jobs:
   
       - name: Run Tests
         run: |
-          pytest
+          pytest tests/python/basic_test -v -rA

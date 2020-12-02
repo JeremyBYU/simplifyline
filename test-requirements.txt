@@ -1,4 +1,4 @@
 pytest # for testing
 pytest-benchmark # for python benchmarking
-simplification # for testing and benchmark comparison
+# simplification # for testing and benchmark comparison, have to do this manually because it only works on certain python libraries
 numpy # for loading points

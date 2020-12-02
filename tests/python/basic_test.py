@@ -2,7 +2,6 @@ import pytest
 import numpy as np
 from simplifyline import MatrixDouble, simplify_line_2d, simplify_line_3d
 
-from simplification.cutil import simplify_coords
 
 def test_basic():
     mat2D = MatrixDouble([[0.0, 0.0], [1.0, 1.0], [2.0, 2.0], [3.0, 3.0]])
@@ -19,9 +18,13 @@ def test_example1(example1):
     assert results.shape == (1118, 2)
 
     # compare with another simplication library
-    results_other = simplify_coords(example1, 0.1)
-    assert results_other.shape == results.shape
-    np.testing.assert_array_equal(results, results_other)
+    try:
+        from simplification.cutil import simplify_coords
+        results_other = simplify_coords(example1, 0.1)
+        assert results_other.shape == results.shape
+        np.testing.assert_array_equal(results, results_other)
+    except ImportError:
+        print("Simplification library not installed, skipping")
 
 @pytest.mark.parametrize("max_distance", [0.1, 1.0, 10.0])
 @pytest.mark.parametrize("high_quality", [True, False])
