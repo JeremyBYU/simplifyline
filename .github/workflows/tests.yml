@@ -33,7 +33,9 @@ jobs:
         uses: jwlawson/actions-setup-cmake@v1.4
 
       - name: Install requirements
-        run: python -m pip install --upgrade pip setuptools wheel pytest
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          pip install -r test-requirements.txt
 
       - name: Build sdist
         run: |

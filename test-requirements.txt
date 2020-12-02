@@ -1,0 +1,4 @@
+pytest # for testing
+pytest-benchmark # for python benchmarking
+simplification # for testing and benchmark comparison
+numpy # for loading points
