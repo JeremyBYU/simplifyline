@@ -58,4 +58,4 @@ jobs:
   
       - name: Run Tests
         run: |
-          pytest tests/python/basic_test -v -rA
+          pytest tests/python/basic_test.py -v -rA
