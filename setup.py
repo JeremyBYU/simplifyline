@@ -2,6 +2,9 @@
 import os
 import sys
 import subprocess
+import multiprocessing
+
+
 
 from setuptools import setup, Extension, find_packages
 from setuptools.command.build_ext import build_ext
@@ -61,11 +64,12 @@ class CMakeBuild(build_ext):
         # CMake lets you override the generator - we need to check this.
         # Can be set with Conda-Build, for example.
         cmake_generator = os.environ.get("CMAKE_GENERATOR", "")
-
+        n_cores = min(1, int(multiprocessing.cpu_count() / 2))
         print(cfg)
         print(extdir)
         print(sys.executable)
         print(self.parallel)
+        print(n_cores)
 
         # Set Python_EXECUTABLE instead if you use PYBIND11_FINDPYTHON
         # EXAMPLE_VERSION_INFO shows you how to pass a value into the C++ code
@@ -110,12 +114,13 @@ class CMakeBuild(build_ext):
 
         # Set CMAKE_BUILD_PARALLEL_LEVEL to control the parallel build level
         # across all generators.
-        if "CMAKE_BUILD_PARALLEL_LEVEL" not in os.environ:
+        if "CMAKE_BUILD_PARALLEL_LEVEL" not in os.environ or True:
             # self.parallel is a Python 3 only way to set parallel jobs by hand
             # using -j in the build_ext call, not supported by pip or PyPA-build.
+            build_args += ["-j{}".format(n_cores)]
             if hasattr(self, "parallel") and self.parallel:
+                pass
                 # CMake 3.12+ only.
-                build_args += ["-j{}".format(self.parallel)]
 
         if not os.path.exists(self.build_temp):
             os.makedirs(self.build_temp)
@@ -133,7 +138,8 @@ setup(
     version=version,
     author="Jeremy Castagno",
     author_email="jeremybyu@gmail.com",
-    description="Test SimplifyLine integration",
+    description="Simplify 2D and 3D Lines",
+    keywords='line 2D 3D simplify simplification',
     url='https://github.com/JeremyBYU/cpp-pybind-skel',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
