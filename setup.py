@@ -65,7 +65,7 @@ class CMakeBuild(build_ext):
         print(cfg)
         print(extdir)
         print(sys.executable)
-        
+        print(self.parallel)
 
         # Set Python_EXECUTABLE instead if you use PYBIND11_FINDPYTHON
         # EXAMPLE_VERSION_INFO shows you how to pass a value into the C++ code

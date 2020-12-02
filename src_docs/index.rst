@@ -35,6 +35,15 @@ SimplifyLine: A Great SimplifyLine
     tutorial/Python/index
     tutorial/C++/index
 
+
+.. _bechmark_index:
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Bencmarks
+
+    benchmarks/python
+
 .. _python_api_index:
 
 .. toctree::

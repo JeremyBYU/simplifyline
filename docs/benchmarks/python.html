@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Template Function SimplifyLine::SimplifyRadialDist &mdash; SimplifyLine 0.0.4 documentation</title>
+  <title>Python Benchmarks &mdash; SimplifyLine 0.0.4 documentation</title>
   
 
   
@@ -39,7 +39,8 @@
   <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Template Function SimplifyLine::SimplifyLine" href="function__simplify_line_8hpp_1ae6c886e957908d72f762c71b6a1c68a3.html" /> 
+    <link rel="next" title="simplifyline" href="../python_api/simplifyline.html" />
+    <link rel="prev" title="C++ interface" href="../tutorial/C++/basic.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -101,8 +102,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/C++/index.html">C++</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Bencmarks</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../benchmarks/python.html">Python Benchmarks</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python Benchmarks</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Python API</span></p>
 <ul>
@@ -111,7 +112,7 @@
 </ul>
 <p class="caption"><span class="caption-text">C++ API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="cpp_library_root.html">C++ Library API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp_api/cpp_library_root.html">C++ Library API</a></li>
 </ul>
 
             
@@ -157,9 +158,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="cpp_library_root.html">C++ Library API</a> &raquo;</li>
-        
-      <li>Template Function SimplifyLine::SimplifyRadialDist</li>
+      <li>Python Benchmarks</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -200,34 +199,20 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="template-function-simplifyline-simplifyradialdist">
-<span id="exhale-function-simplify-line-8hpp-1a6f47d12477d1280ac073939610e674c7"></span><h1>Template Function SimplifyLine::SimplifyRadialDist<a class="headerlink" href="#template-function-simplifyline-simplifyradialdist" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>Defined in <a class="reference internal" href="file_include_SimplifyLine_SimplifyLine.hpp.html#file-include-simplifyline-simplifyline-hpp"><span class="std std-ref">File SimplifyLine.hpp</span></a></p></li>
-</ul>
-<div class="section" id="function-documentation">
-<h2>Function Documentation<a class="headerlink" href="#function-documentation" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="_CPPv4I0_iEN12SimplifyLine18SimplifyRadialDistE6MatrixI1TERK6MatrixI1TE1T">
-<span class="target" id="_simplify_line_8hpp_1a6f47d12477d1280ac073939610e674c7"></span>template&lt;typename <code class="sig-name descname">T</code>, int <code class="sig-name descname">dim</code>&gt;<br />Matrix&lt;<a class="reference internal" href="#_CPPv4I0_iEN12SimplifyLine18SimplifyRadialDistE6MatrixI1TERK6MatrixI1TE1T" title="SimplifyLine::SimplifyRadialDist::T">T</a>&gt; <code class="sig-prename descclassname">SimplifyLine<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">SimplifyRadialDist</code><span class="sig-paren">(</span><em class="property">const</em> Matrix&lt;<a class="reference internal" href="#_CPPv4I0_iEN12SimplifyLine18SimplifyRadialDistE6MatrixI1TERK6MatrixI1TE1T" title="SimplifyLine::SimplifyRadialDist::T">T</a>&gt; &amp;<em>points</em>, <a class="reference internal" href="#_CPPv4I0_iEN12SimplifyLine18SimplifyRadialDistE6MatrixI1TERK6MatrixI1TE1T" title="SimplifyLine::SimplifyRadialDist::T">T</a> <em>max_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0_iEN12SimplifyLine18SimplifyRadialDistE6MatrixI1TERK6MatrixI1TE1T" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Will perform simple radial distance simplification on a line. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Matrix&lt;T&gt; The simplified line </p>
-</dd>
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimesion of the line, 2D or 3D </p></li>
-</ul>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">points</span></code>: <a class="reference internal" href="class_simplify_line_1_1_matrix.html#class_simplify_line_1_1_matrix"><span class="std std-ref">Matrix</span></a> of 2D or 3D points </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">max_distance</span></code>: Maximum distance of point on line </p></li>
-</ul>
-</dd>
-</dl>
-</p>
-</dd></dl>
-
+<div class="section" id="python-benchmarks">
+<h1>Python Benchmarks<a class="headerlink" href="#python-benchmarks" title="Permalink to this headline">¶</a></h1>
+<p>These benchmarks are not finished and are preliminary. Even after including many test cases I would still take any benchmark with a huge grain of salt!
+The test names are organized as “test_TESTDATA_LIBRARY[_lowquality]”. <code class="docutils literal notranslate"><span class="pre">TESTDATA</span></code> refers to the test line set, the library is either <code class="docutils literal notranslate"><span class="pre">simplifyline</span></code> or <a class="reference external" href="https://github.com/urschrei/simplification">simplification</a> which is a similar rust library with the implemented RDP algorithm.
+Our implementation follows the <a class="reference external" href="https://mourner.github.io/simplify-js/">SimplifyJS</a> library trick which can use a radial distance pre-filter when placed in <code class="docutils literal notranslate"><span class="pre">lowquality</span></code> mode (high_quality=False).</p>
+<p>Note that the <a class="reference external" href="https://github.com/urschrei/simplification">simplification</a> library has way more features then this library and is probably a safer bet for use. I didn’t know about it until after I made this library. I also still desire a drop in C++ replacement with CMake library as well.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>------------------------------------------------------------------------------------------------------ benchmark: 3 tests -----------------------------------------------------------------------------------------------------
+Name (time in us)                                Min                    Max                   Mean              StdDev                 Median                 IQR            Outliers         OPS            Rounds  Iterations
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+test_example1_simplifyline_lowquality       605.1000 (1.0)         806.2000 (1.0)         636.5691 (1.0)       16.2028 (1.0)         642.0000 (1.0)       21.8500 (1.0)         404;9  1,570.9213 (1.0)        1575           1
+test_example1_simplifyline                3,734.1000 (6.17)      5,241.5000 (6.50)      3,835.5558 (6.03)     144.7665 (8.93)      3,805.7000 (5.93)      96.0000 (4.39)          5;4    260.7184 (0.17)        260           1
+test_example1_simplification              9,910.6000 (16.38)    10,614.7000 (13.17)    10,140.0295 (15.93)     93.2924 (5.76)     10,119.3000 (15.76)    106.6250 (4.88)         18;4     98.6190 (0.06)         95           1
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+</pre></div>
 </div>
 </div>
 
@@ -239,8 +224,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../python_api/simplifyline.html" class="btn btn-neutral float-right" title="simplifyline" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="function__simplify_line_8hpp_1ae6c886e957908d72f762c71b6a1c68a3.html" class="btn btn-neutral float-left" title="Template Function SimplifyLine::SimplifyLine" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="../tutorial/C++/basic.html" class="btn btn-neutral float-left" title="C++ interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

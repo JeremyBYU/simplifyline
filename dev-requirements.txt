@@ -1,5 +1,6 @@
 gitpython # for version bump script
 pytest # for testing
+pytest-benchmark
 
 # Documentation Generation Packages
 notebook
