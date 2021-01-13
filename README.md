@@ -29,7 +29,7 @@ results = np.array(results_mat2D)
 np.testing.assert_array_equal(results, np.array([[0.0, 0.0], [3.0, 3.0]]))
 ```
 
-See [documentation](https://jeremybyu.github.io/simpliflyline/) for more details.
+See [documentation](https://jeremybyu.github.io/simplifyline/) for more details.
 
 ## Build Project Manually
 
