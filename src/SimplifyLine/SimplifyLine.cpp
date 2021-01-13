@@ -52,8 +52,8 @@ Matrix<T> SimplifyRadialDist(const Matrix<T>& points, T max_distance)
         Utility::faux_unroll<dim>::call([&](auto i) { point_buffer.push_back(points(rows - 1, i)); });
     }
 
-    size_t new_rows = point_buffer.size() / 2;
-    Matrix<T> new_points(std::move(point_buffer), new_rows, 2);
+    size_t new_rows = point_buffer.size() / dim;
+    Matrix<T> new_points(std::move(point_buffer), new_rows, dim);
     return new_points;
 }
 

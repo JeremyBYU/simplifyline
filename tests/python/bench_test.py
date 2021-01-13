@@ -1,9 +1,12 @@
 import pytest
 import numpy as np
-from simplifyline import MatrixDouble, simplify_line_2d, simplify_line_3d
+from simplifyline import MatrixDouble, simplify_line_2d, simplify_line_3d, simplify_radial_dist_2d
 
 from simplification.cutil import simplify_coords
 
+def test_example1_simplifyline_lowquality(benchmark, example1):
+    mat = MatrixDouble(example1)
+    result = benchmark(simplify_line_2d, mat, 0.1, False)
 
 def test_example1_simplifyline_lowquality(benchmark, example1):
     mat = MatrixDouble(example1)

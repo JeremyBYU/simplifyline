@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Template Function SimplifyLine::DouglasPeucker &mdash; SimplifyLine 0.0.6 documentation</title>
+  <title>simplifyline.simplify_radial_dist_3d &mdash; SimplifyLine 0.0.6 documentation</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Function SimplifyLine::GetSimplifyLineVersion" href="function__simplify_line_8hpp_1a3256d24da522df0f2054e2213dcc2b73.html" />
-    <link rel="prev" title="Template Class Matrix" href="class_simplify_line_1_1_matrix.html" /> 
+    <link rel="next" title="simplifyline.helper" href="simplifyline.helper.html" />
+    <link rel="prev" title="simplifyline.simplify_radial_dist_2d" href="simplifyline.simplify_radial_dist_2d.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -106,13 +106,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../benchmarks/python.html">Python Benchmarks</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Python API</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../python_api/simplifyline.html">simplifyline</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python_api/simplifyline.helper.html">simplifyline.helper</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="simplifyline.html">simplifyline</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="simplifyline.MatrixDouble.html">MatrixDouble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplifyline.VectorDouble.html">VectorDouble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplifyline.VectorInt.html">VectorInt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplifyline.VectorUInt8.html">VectorUInt8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplifyline.VectorULongInt.html">VectorULongInt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplifyline.get_simplifyline_version.html">get_simplifyline_version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplifyline.simplify_line_2d.html">simplify_line_2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplifyline.simplify_line_3d.html">simplify_line_3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simplifyline.simplify_radial_dist_2d.html">simplify_radial_dist_2d</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">simplify_radial_dist_3d</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="simplifyline.helper.html">simplifyline.helper</a></li>
 </ul>
 <p class="caption"><span class="caption-text">C++ API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="cpp_library_root.html">C++ Library API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp_api/cpp_library_root.html">C++ Library API</a></li>
 </ul>
 
             
@@ -158,9 +170,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="cpp_library_root.html">C++ Library API</a> &raquo;</li>
+          <li><a href="simplifyline.html">simplifyline</a> &raquo;</li>
         
-      <li>Template Function SimplifyLine::DouglasPeucker</li>
+      <li>simplifyline.simplify_radial_dist_3d</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -201,35 +213,25 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="template-function-simplifyline-douglaspeucker">
-<span id="exhale-function-simplify-line-8hpp-1abb4a844f6f1e4a94482f2b68322ea282"></span><h1>Template Function SimplifyLine::DouglasPeucker<a class="headerlink" href="#template-function-simplifyline-douglaspeucker" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>Defined in <a class="reference internal" href="file_include_SimplifyLine_SimplifyLine.hpp.html#file-include-simplifyline-simplifyline-hpp"><span class="std std-ref">File SimplifyLine.hpp</span></a></p></li>
-</ul>
-<div class="section" id="function-documentation">
-<h2>Function Documentation<a class="headerlink" href="#function-documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="simplifyline-simplify-radial-dist-3d">
+<h1>simplifyline.simplify_radial_dist_3d<a class="headerlink" href="#simplifyline-simplify-radial-dist-3d" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
-<dt id="_CPPv4I0_iEN12SimplifyLine14DouglasPeuckerE6MatrixI1TERK6MatrixI1TE1T">
-<span class="target" id="_simplify_line_8hpp_1abb4a844f6f1e4a94482f2b68322ea282"></span>template&lt;typename <code class="sig-name descname">T</code>, int <code class="sig-name descname">dim</code>&gt;<br />Matrix&lt;<a class="reference internal" href="#_CPPv4I0_iEN12SimplifyLine14DouglasPeuckerE6MatrixI1TERK6MatrixI1TE1T" title="SimplifyLine::DouglasPeucker::T">T</a>&gt; <code class="sig-prename descclassname">SimplifyLine<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">DouglasPeucker</code><span class="sig-paren">(</span><em class="property">const</em> Matrix&lt;<a class="reference internal" href="#_CPPv4I0_iEN12SimplifyLine14DouglasPeuckerE6MatrixI1TERK6MatrixI1TE1T" title="SimplifyLine::DouglasPeucker::T">T</a>&gt; &amp;<em>points</em>, <a class="reference internal" href="#_CPPv4I0_iEN12SimplifyLine14DouglasPeuckerE6MatrixI1TERK6MatrixI1TE1T" title="SimplifyLine::DouglasPeucker::T">T</a> <em>max_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0_iEN12SimplifyLine14DouglasPeuckerE6MatrixI1TERK6MatrixI1TE1T" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Will perform Douglas Peucker Simplication on the line. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Matrix&lt;T&gt; The simplified line </p>
-</dd>
-<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code>: The dimesion of the line, 2D or 3D </p></li>
+<dt id="simplifyline.simplify_radial_dist_3d">
+<code class="sig-prename descclassname">simplifyline.</code><code class="sig-name descname">simplify_radial_dist_3d</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">max_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#simplifyline.simplify_radial_dist_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simplifies a 3D using only radial distance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>simplifyline_pybind.MatrixDouble</em>) – The points matrix</p></li>
+<li><p><strong>max_distance</strong> (<em>float</em>) – Maximum distance for simplification</p></li>
 </ul>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">points</span></code>: <a class="reference internal" href="class_simplify_line_1_1_matrix.html#class_simplify_line_1_1_matrix"><span class="std std-ref">Matrix</span></a> of 2D or 3D points </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">max_distance</span></code>: Maximum distance of point on line </p></li>
-</ul>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>simplifyline_pybind.MatrixDouble</p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
-</div>
 </div>
 
 
@@ -240,10 +242,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="function__simplify_line_8hpp_1a3256d24da522df0f2054e2213dcc2b73.html" class="btn btn-neutral float-right" title="Function SimplifyLine::GetSimplifyLineVersion" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="simplifyline.helper.html" class="btn btn-neutral float-right" title="simplifyline.helper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="class_simplify_line_1_1_matrix.html" class="btn btn-neutral float-left" title="Template Class Matrix" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="simplifyline.simplify_radial_dist_2d.html" class="btn btn-neutral float-left" title="simplifyline.simplify_radial_dist_2d" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
