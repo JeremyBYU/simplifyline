@@ -78,6 +78,9 @@ class CMakeBuild(build_ext):
             "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY={}".format(extdir),
             "-DPYTHON_EXECUTABLE={}".format(sys.executable),
             "-DCMAKE_BUILD_TYPE={}".format(cfg),  # not used on MSVC, but no harm
+            "-DSPL_BUILD_TESTS=OFF",
+            "-DSPL_BUILD_BENCHMARKS=OFF",
+            "-DSPL_BUILD_EXAMPLES=OFF",
         ]
         build_args = []
 
